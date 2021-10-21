@@ -1,5 +1,6 @@
 <template>
 <div>
+    <pagination :count="info.pages" :current="current" @paginate="getPage"></pagination>
     <button class="button is-dark" @click="prev" :disabled="!info.prev">Prev</button>
     <button class="button is-dark" @click="next" :disabled="!info.next">Next</button>
     <div class="columns is-multiline">
@@ -12,9 +13,10 @@
 
 <script>
 import CharacterCard from './CharacterCard.vue';
+import Pagination from './Pagination.vue';
 const axios = require("axios")
 export default {
-  components: { CharacterCard },
+  components: { CharacterCard, Pagination },
     created(){
         axios.get("https://rickandmortyapi.com/api/character").then(response => {
             console.log(response.data);
@@ -30,7 +32,8 @@ export default {
                 pages: 0,
                 count: 0 
             },
-            results: []
+            results: [],
+            current: 1
         }
     },
     methods: {
@@ -47,6 +50,14 @@ export default {
             this.info = response.data.info;
             this.results = response.data.results;
             }); 
+        },
+        getPage(page){
+            this.current=page;
+            axios.get("https://rickandmortyapi.com/api/character" + page).then(response => {
+            console.log(response.data);
+            this.info = response.data.info;
+            this.results = response.data.results;
+            });
         }
     }
 }
