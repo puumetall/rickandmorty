@@ -1,12 +1,12 @@
 <template>
   <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-  <a class="pagination-previous" @click="$emit('paginate',current-1)" :disabled="current<=1">Previous</a>
-  <a class="pagination-next" @click="$emit('paginate',current+1)" :disabled="current>=count">Next page</a>
+  <a class="pagination-previous" @click="$emit('paginate', current-1)" :disabled="current<=1">Previous</a>
+  <a class="pagination-next" @click="$emit('paginate', current+1)" :disabled="current>=count">Next page</a>
   <ul class="pagination-list">
     <li v-for="(page,index) in pages" :key="index">
         <a v-if="page!='...'"
         class="pagination-link"
-        :class="{'is-active' :page==current}"
+        :class="{'is-current' :page==current}"
         @click="$emit('paginate',page)"
         aria-label="Goto page 1">{{page}}</a>
         <span v-else class="pagination-ellipsis">&hellip;</span>
@@ -17,7 +17,7 @@
 
 <script>
 export default {
-    props: ["current", "count"],
+    props: ['current', 'count'],
     computed: {
         pages(){
             let pages = [];

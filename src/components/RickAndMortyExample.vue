@@ -53,7 +53,7 @@ export default {
         },
         getPage(page){
             this.current=page;
-            axios.get("https://rickandmortyapi.com/api/character" + page).then(response => {
+            axios.get("https://rickandmortyapi.com/api/character?page=" + page).then(response => {
             console.log(response.data);
             this.info = response.data.info;
             this.results = response.data.results;
