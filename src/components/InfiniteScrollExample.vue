@@ -45,7 +45,7 @@ export default {
         },
         scroll(){
             console.log(window.scrollY + window.innerHeight, document.body.clientHeight);
-            if(window.scrollY + window.innerHeight == document.body.clientHeight && this.info.next){
+            if(window.scrollY + window.innerHeight > document.body.clientHeight - 100 && this.info.next){
                 this.next();
             }
         }
