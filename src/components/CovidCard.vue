@@ -1,37 +1,37 @@
 <template>
   <div class="card">
-      <header class="card header">
-          <p class="card header-title">
+      <header class="card-header">
+          <p class="card-header-title">
               Country name
           </p>
       </header>
-      <div class="card content">
+      <div class="card-content">
           <div class="content">
-              <table class="table">
+              <table class="table is-striped is-hoverable">
                   <tbody>
                       <tr>
-                          <th>Total Confirmed</th>
+                          <th>Total Confirmed:</th>
                           <td>11111</td>
                       </tr>
                       <tr>
-                          <th>Total Deaths</th>
+                          <th>Total Deaths:</th>
                           <td>11111</td>
                       </tr>
                       <tr>
-                          <th>Total Recovered</th>
+                          <th>Total Recovered:</th>
                           <td>11111</td>
                           
                       </tr>
                       <tr>
-                          <th>New Confirmed</th>
+                          <th>New Confirmed:</th>
                           <td>11111</td>
                       </tr>
                       <tr>
-                          <th>New Deaths</th>
+                          <th>New Deaths:</th>
                           <td>11111</td>
                       </tr>
                       <tr>
-                          <th>New Recovered</th>
+                          <th>New Recovered:</th>
                           <td>11111</td>
                       </tr>
                   </tbody>
