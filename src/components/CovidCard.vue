@@ -1,7 +1,7 @@
 <template>
-  <div class="card">
+  <div class="card has-background-info">
       <header class="card-header">
-          <p class="card-header-title">
+          <p class="card-header-title has-text-white-bis">
               {{country.Country}}
           </p>
       </header>
@@ -11,28 +11,28 @@
                   <tbody>
                       <tr>
                           <th>Total Confirmed:</th>
-                          <td>11111</td>
+                          <td>{{country.TotalConfirmed}}</td>
                       </tr>
                       <tr>
                           <th>Total Deaths:</th>
-                          <td>11111</td>
+                          <td>{{country.TotalDeaths}}</td>
                       </tr>
                       <tr>
                           <th>Total Recovered:</th>
-                          <td>11111</td>
+                          <td>{{country.TotalRecovered}}</td>
                           
                       </tr>
                       <tr>
                           <th>New Confirmed:</th>
-                          <td>11111</td>
+                          <td>{{country.NewConfirmed}}</td>
                       </tr>
                       <tr>
                           <th>New Deaths:</th>
-                          <td>11111</td>
+                          <td>{{country.NewDeaths}}</td>
                       </tr>
                       <tr>
                           <th>New Recovered:</th>
-                          <td>11111</td>
+                          <td>{{country.NewRecovered}}</td>
                       </tr>
                   </tbody>
               </table>

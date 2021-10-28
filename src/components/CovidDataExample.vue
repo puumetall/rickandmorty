@@ -1,5 +1,6 @@
 <template>
     <div>
+        <input type="text" class="input mb-3" v-model="search">
         <div class="columns is-multiline">
             <div class="column is-one-fifth" v-for="country in countries" :key="country.ID">
                 <covid-card :country="country"></covid-card>
@@ -21,7 +22,8 @@ export default {
     },
     data(){
         return {
-            countries: []
+            countries: [],
+            search:""
         }
     }
 }

@@ -1,19 +1,21 @@
 <template>
-<div>
+
+<div class="has-background-grey-dark">
   <div class="tabs is-centered is-large">
     <ul>
       <li v-for="(item,index) in items"
       :key="index"
       :class="{'is-active': index === active}"
       @click="active = index">
-        <a>{{item.title}}</a>
+        <a class="has-text-white-bis">{{item.title}}</a>
       </li>
     </ul>
   </div>
-  <section class="section">
+  <section class="section ">
     <component :is="items[active].componentName"></component>
   </section>
 </div>
+
 </template>
 
 <script>
