@@ -30,7 +30,7 @@ export default {
         filteredCountries(){
             return this.countries.filter(country => {
                let partialName = country.Country.substr(0,this.search.length);
-               return partialName == this.search;
+               return partialName.toLowerCase() == this.search.toLowerCase();
             });
         }
     }
