@@ -2,7 +2,7 @@
   <div class="card">
       <header class="card-header">
           <p class="card-header-title">
-              Country name
+              {{country.Country}}
           </p>
       </header>
       <div class="card-content">
@@ -43,7 +43,7 @@
 
 <script>
 export default {
-
+    props: ['country']
 }
 </script>
 
