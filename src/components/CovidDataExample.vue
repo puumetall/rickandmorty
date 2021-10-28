@@ -2,7 +2,7 @@
     <div>
         <input type="text" class="input mb-3" v-model="search">
         <div class="columns is-multiline">
-            <div class="column is-one-fifth" v-for="country in countries" :key="country.ID">
+            <div class="column is-one-fifth" v-for="country in filteredCountries" :key="country.ID">
                 <covid-card :country="country"></covid-card>
             </div>
         </div>
@@ -23,7 +23,15 @@ export default {
     data(){
         return {
             countries: [],
-            search:""
+            search:''
+        }
+    },
+    computed: {
+        filteredCountries(){
+            return this.countries.filter(country => {
+               let partialName = country.Country.substr(0,this.search.length);
+               return partialName == this.search;
+            });
         }
     }
 }
