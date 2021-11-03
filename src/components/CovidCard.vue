@@ -1,5 +1,5 @@
 <template>
-  <div class="card has-background-info">
+  <div class="card has-background-warning-dark">
       <header class="card-header">
           <p class="card-header-title has-text-white-bis">
               {{country.Country}}
@@ -16,12 +16,6 @@
                       <tr>
                           <th>Total Deaths:</th>
                           <td>{{country.TotalDeaths}}</td>
-                      </tr>
-                      <tr>
-                          <th>Total Recovered:</th>
-                          <td>{{country.TotalRecovered}}</td>
-                          
-                      </tr>
                       <tr>
                           <th>New Confirmed:</th>
                           <td>{{country.NewConfirmed}}</td>
@@ -29,11 +23,7 @@
                       <tr>
                           <th>New Deaths:</th>
                           <td>{{country.NewDeaths}}</td>
-                      </tr>
-                      <tr>
-                          <th>New Recovered:</th>
-                          <td>{{country.NewRecovered}}</td>
-                      </tr>
+                        </tr>
                   </tbody>
               </table>
           </div>

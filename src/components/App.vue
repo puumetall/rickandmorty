@@ -1,13 +1,13 @@
 <template>
 
-<div class="has-background-grey-dark">
+<div class="has-background-warning-light">
   <div class="tabs is-centered is-large">
     <ul>
       <li v-for="(item,index) in items"
       :key="index"
       :class="{'is-active': index === active}"
       @click="active = index">
-        <a class="has-text-white-bis">{{item.title}}</a>
+        <a class="has-text-black-bis">{{item.title}}</a>
       </li>
     </ul>
   </div>

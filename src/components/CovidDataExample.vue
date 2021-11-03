@@ -1,8 +1,19 @@
 <template>
     <div>
-        <input type="text" class="input mb-3" v-model="search">
+        <div class="columns">
+            <div class="column">
+                <input type="text" class="input mb-3 is-info" v-model="search">
+            </div>
+        <div class="column is-one-fifth">
+            <div class="select">
+                <select v-model="sort">
+                    <option v-for="sorting in sortingFields" :key="sorting.name" :value="sorting">{{sorting.name}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
         <div class="columns is-multiline">
-            <div class="column is-one-fifth" v-for="country in filteredCountries" :key="country.ID">
+            <div class="column is-one-fifth" v-for="country in sortedCountries" :key="country.ID">
                 <covid-card :country="country"></covid-card>
             </div>
         </div>
@@ -23,7 +34,9 @@ export default {
     data(){
         return {
             countries: [],
-            search:''
+            search:'',
+            sort:{field: 'TotalConfirmed', name:'Total Confirmed ascending', order:'asc'},
+            fields: ['TotalConfirmed','TotalDeaths','NewConfirmed','NewDeaths']
         }
     },
     computed: {
@@ -31,6 +44,25 @@ export default {
             return this.countries.filter(country => {
                let partialName = country.Country.substr(0,this.search.length);
                return partialName.toLowerCase() == this.search.toLowerCase();
+            });
+        },
+        sortingFields(){
+            let sorting = [];
+            this.fields.map(field => {
+                sorting.push({name: field + 'ascending', order: 'asc'});
+                sorting.push({name: field + 'descending', order: 'desc'});
+            });
+            return sorting;
+        },
+        sortedCountries(){
+            return this.filteredCountries.sort( (a,b) =>{
+
+                if(a[this.sort.field]>b[this.sort.field]) {
+                    return 1;
+                } else if(a[this.sort.field]<b[this.sort.field]) {
+                    return -1;
+                }
+                return 0;
             });
         }
     }
