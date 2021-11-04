@@ -7,7 +7,7 @@
       :key="index"
       :class="{'is-active': index === active}"
       @click="active = index">
-        <a class="has-text-black-bis">{{item.title}}</a>
+        <a class="has-text-black-bis" :href="'/#' + item.path">{{item.title}}</a>
       </li>
     </ul>
   </div>
@@ -42,13 +42,13 @@ export default {
       return {
         active: 0,
         items: [
-          {title:'Covid Data Example', componentName:'CovidDataExample'},
-          {title:'Infinite Scroll Example', componentName:'InfiniteScrollExample'},
-          {title:'Rick and Morty Example', componentName:'RickAndMortyExample'},
-          {title:'Api Example', componentName:'ApiExample'},
-          {title:'Clicker Example', componentName:'ClickerExample'},
-          {title:'Modal Example', componentName:'ModalExample'},
-          {title:'ToDo Example', componentName:'ToDoExample'},
+          {title:'Covid Data Example', path:'/'},
+          {title:'Infinite Scroll Example', path:'/scroll'},
+          {title:'Rick and Morty Example', path:'/rickandmorty'},
+          {title:'Api Example', path:'/api'},
+          {title:'Clicker Example', path:'/clicker'},
+          {title:'Modal Example', path:'/modal'},
+          {title:'ToDo Example', path:'/todo'},
         ]
       }
     }
