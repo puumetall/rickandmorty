@@ -2,7 +2,7 @@
   <div class="card has-background-warning-dark">
       <header class="card-header">
           <p class="card-header-title has-text-white-bis">
-              {{country.Country}}
+              <router-link :to="'/covid/' + country.Slug">{{country.Country}}</router-link>
           </p>
       </header>
       <div class="card-content">
