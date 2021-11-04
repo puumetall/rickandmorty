@@ -49,18 +49,18 @@ export default {
         sortingFields(){
             let sorting = [];
             this.fields.map(field => {
-                sorting.push({name: field + 'ascending', order: 'asc'});
-                sorting.push({name: field + 'descending', order: 'desc'});
+                sorting.push({name: field + ' ascending', order: 'asc', field: field});
+                sorting.push({name: field + ' descending', order: 'desc', field: field});
             });
             return sorting;
         },
         sortedCountries(){
             return this.filteredCountries.sort( (a,b) =>{
-
-                if(a[this.sort.field]>b[this.sort.field]) {
-                    return 1;
-                } else if(a[this.sort.field]<b[this.sort.field]) {
-                    return -1;
+                let order = this.sort.order == 'desc' ? -1 : 1;
+                if(a[this.sort.field] > b [this.sort.field]) {
+                    return 1 * order;
+                } else if(a[this.sort.field] < b [this.sort.field]) {
+                    return -1 * order;
                 }
                 return 0;
             });

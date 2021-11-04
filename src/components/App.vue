@@ -12,7 +12,7 @@
     </ul>
   </div>
   <section class="section ">
-    <component :is="items[active].componentName"></component>
+    <router-view></router-view>
   </section>
 </div>
 
