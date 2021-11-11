@@ -1,7 +1,9 @@
 <template>
 <div>
   <h1 class="has-text-primary is-size-1">{{$route.params.country}}</h1>
-  <chart v-if="data" :data="confirmed" :labels="labels" type="line"></chart>
+  <button class="button is-warning" @click="active='confirmed'">Confirmed</button>
+  <button class="button is-danger" @click="active='deaths'">Deaths</button>
+  <chart v-if="data" :data="this[active]" :labels="labels" type="line"></chart>
   </div>
 </template>
 
@@ -18,16 +20,20 @@ export default {
   },
   data(){
     return{
-      data: null
+      data: null,
+      active: 'confirmed'
     }
 },
 computed: {
     labels(){
-      return this.data.map(value => value.Data);
+      return this.data.map(value => value.Date);
     },
     confirmed(){
       return this.data.map(value => value.Confirmed);
-    }
+    },
+    deaths(){
+      return this.data.map(value => value.Deaths);
+    },
   }
 }
 </script>

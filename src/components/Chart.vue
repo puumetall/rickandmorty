@@ -14,7 +14,7 @@ export default {
         this.myChart = new Chart(ctx, {
     type: this.type,
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: this.labels,
         datasets: [{
             label: '# of Votes',
             data: this.data,

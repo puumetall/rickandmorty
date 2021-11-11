@@ -35,6 +35,7 @@ export default {
           {title:'Modal', path:'/modal'},
           {title:'ToDo', path:'/todo'},
           {title:'Chart', path:'/chart'},
+          {title:'Map', path:'/map'},
         ]
       }
     }
