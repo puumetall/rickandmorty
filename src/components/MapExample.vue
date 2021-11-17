@@ -51,8 +51,8 @@ export default {
                 let covidGeoJson = {...this.geoJson};
                 covidGeoJson.features = this.geoJson.features.map(feature => {
                     let country = this.countries.find(country => country.Country == feature.properties.name);
-                    feature.properties.confirmed = 0;
-                    feature.properties.deaths = 0;
+                    feature.properties.confirmed = -1;
+                    feature.properties.deaths = -1;
                     if(country){
                         feature.properties.confirmed = country.TotalConfirmed;
                         feature.properties.deaths = country.TotalDeaths;
