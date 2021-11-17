@@ -3,14 +3,14 @@
     <button class="button is-primary" @click="goToHome">Go to home</button>
     <button class="button is-danger" @click="goToSchool">Go to school</button>
     <!-- <google-maps :lat="this.lat" :lng="this.lng" :zoom="this.zoom"></google-maps> -->
-    <leaflet-map :lat="lat" :lng="lng" :zoom="zoom" :geoJson="geoJson"></leaflet-map>
+    <leaflet-map :lat="lat" :lng="lng" :zoom="zoom" :geoJson="covidGeoJson"></leaflet-map>
 </div>
 </template>
 
 <script>
 import GoogleMaps from './GoogleMaps.vue';
 import LeafletMap from './LeafletMap.vue';
-const axios= require('axios');
+import axios from 'axios';
 export default {
     components: { GoogleMaps, LeafletMap },
     created(){
